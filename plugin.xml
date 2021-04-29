@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-isTvBox" version="0.0.1">
+    <name>isTvBox</name>
+
+    <description>An Android Cordova plugin that allows users to display simple Toast messages at the bottom of the screen.</description>
+    <license>MIT</license>
+
+    <keywords>cordova,android,isTvBox,androidtv</keywords>
+    <repo>https://github.com/Shahidarain777/isTVBox.git</repo>
+    <issue>https://github.com/Shahidarain777/isTVBox/issues</issue>
+  
+    <engines>
+        <engine name="cordova" version=">=3.0.0"/>
+    </engines>
+  
+    <js-module src="www/istvbox.js" name="isTvBox">
+        <clobbers target="window.plugins.isTvBox" />
+    </js-module>
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="IsTvBox">
+                <param name="android-package" value="com.shahid.cordova.plugin.IsTvBox"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/IsTvBox.java" target-dir="src/com/shahid/cordova/plugin" />
+    </platform>
+</plugin>
