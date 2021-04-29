@@ -23,31 +23,34 @@ public class IsTvBox extends CordovaPlugin {
         callbackContext.error("\"" + action + "\" is not a recognized action.");
         return false;
       }
-      String deviceInfo = "";
-      try {
-        JSONObject options = args.getJSONObject(0);
-        // message = options.getString("message");
-        // duration = options.getString("duration");
-      } catch (JSONException e) {
-        callbackContext.error("Error encountered: " + e.getMessage());
-        return false;
-      }
+     
+    
       // will check that if app is running on android Tv or Android mobile
-      UiModeManager uiModeManager = (UiModeManager) cordova.getActivity().getApplicationContext().getSystemService(Context.UI_MODE_SERVICE);
-      if (uiModeManager.getCurrentModeType() == Configuration.UI_MODE_TYPE_TELEVISION) {
-          Log.d(TAG, "TV Device");
+      JSONObject r = new JSONObject();
+            r.put("isTvBox", this.isTv());
+            r.put("isTouchScreen", this.isTouch());
           
-          deviceInfo = "TV Device";
-         
-      } else {
-          Log.d(TAG, "Non-TV Device");
-       
-          deviceInfo = "Non-TV Device";
-         
-      }
-      callbackContext.success(deviceInfo);
+      callbackContext.success(r);
       return true;
      
      
+  }
+
+  public boolean isTv(){
+    UiModeManager uiModeManager = (UiModeManager) cordova.getActivity().getApplicationContext().getSystemService(Context.UI_MODE_SERVICE);
+    if (uiModeManager.getCurrentModeType() == Configuration.UI_MODE_TYPE_TELEVISION) {
+        Log.d(TAG, "TV Device");
+        
+       return true;
+       
+    } else {
+        Log.d(TAG, "Non-TV Device");
+     
+      return false;
+       
+    }
+  }
+  public boolean isTouch(){
+    return cordova.getActivity().getApplicationContext().getPackageManager().hasSystemFeature("android.hardware.touchscreen");
   }
 }
