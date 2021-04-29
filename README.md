@@ -1,5 +1,5 @@
 # isTVBox
-This plugin will detect if app is running or android Tv device or non tv.
+This plugin will detect if app is running on android Tv device or non tv.
 # Adding 
 cordova plugin add https://github.com/miloproductionsinc/cordova-plugin-isTvBox.git
 
