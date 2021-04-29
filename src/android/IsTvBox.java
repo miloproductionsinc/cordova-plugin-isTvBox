@@ -17,7 +17,7 @@ public class IsTvBox extends CordovaPlugin {
   public Context context;
   @Override
   public boolean execute(String action, JSONArray args,
-    final CallbackContext callbackContext) {
+    final CallbackContext callbackContext) throws JSONException {
       // Verify that the user sent a 'checkTvBox' action
       if (!action.equals("checkTvBox")) {
         callbackContext.error("\"" + action + "\" is not a recognized action.");
