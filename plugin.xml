@@ -4,12 +4,12 @@
         id="cordova-plugin-isTvBox" version="0.0.1">
     <name>isTvBox</name>
 
-    <description>An Android Cordova plugin that allows users to display simple Toast messages at the bottom of the screen.</description>
+    <description>An Android Cordova plugin that gets device info such as if the app is running on Android TV and has touch screen.</description>
     <license>MIT</license>
 
     <keywords>cordova,android,isTvBox,androidtv</keywords>
-    <repo>https://github.com/Shahidarain777/isTVBox.git</repo>
-    <issue>https://github.com/Shahidarain777/isTVBox/issues</issue>
+    <repo>https://github.com/miloproductionsinc/cordova-plugin-isTvBox.git</repo>
+    <issue>https://github.com/miloproductionsinc/cordova-plugin-isTvBox/issues</issue>
   
     <engines>
         <engine name="cordova" version=">=3.0.0"/>
